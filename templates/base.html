@@ -1,0 +1,2423 @@
+
+<!DOCTYPE HTML>
+ <html lang="en">
+     <head>
+        <meta charset="UTF-8">
+        <title>Bootstrap 4 Ecommerce products list with range filters Example </title>
+        <script type="5ccf1a6ae2abfd3c16f67624-text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script type="5ccf1a6ae2abfd3c16f67624-text/javascript">
+        
+            window.onload = function(){
+                function loadjscssfile(filename, filetype) {
+                    if(filetype == "js") {
+                        var cssNode = document.createElement('script');
+                        cssNode.setAttribute("type", "text/javascript");
+                        cssNode.setAttribute("src", filename);
+                    } else if(filetype == "css") {
+                        var cssNode = document.createElement("link");
+                        cssNode.setAttribute("rel", "stylesheet");
+                        cssNode.setAttribute("type", "text/css");
+                        cssNode.setAttribute("href", filename);
+                    }
+                    if(typeof cssNode != "undefined")
+                        document.getElementsByTagName("head")[0].appendChild(cssNode);
+                }
+                loadjscssfile('https://bbbootstrap.com/assets/js/lazy-load.js', "js"); 
+                
+            };
+           
+        </script>
+         
+
+         <link rel="shortcut icon" href="https://i.imgur.com/msO7f5I.png">
+
+         <!--Structured data-->
+
+         <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "BBBootstrap.com",
+              "url": "https://bbbootstrap.com",
+              "logo": "https://bbbootstrap.com/assets/images/logo4.png",
+              "sameAs": [
+                "https://www.facebook.com/bbbootstrap",
+                "https://twitter.com/bbbootstrap",
+                "https://www.instagram.com/bbbootstrap_/",
+                "https://www.youtube.com/channel/UCVIgJEnVBuQYaBspocZs_5w",
+                "https://cl.linkedin.com/company/bbbootstrap",
+                "https://in.pinterest.com/bbbootstrap/_created/"
+              ]
+            }
+            </script>
+
+            <script type="application/ld+json">
+                {
+                  "@context": "https://schema.org/",
+                  "@type": "WebSite",
+                  "name": "BBBootstrap.com",
+                  "url": "https://bbbootstrap.com",
+                  "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://bbbootstrap.com/search?query={query}",
+                    "query-input": "required name=query"
+                  }
+                }
+                </script>
+
+         <!--Structured data end-->
+        
+        
+         
+
+
+         
+          
+                   <!-- AdinPlay Ads -->
+<script type="5ccf1a6ae2abfd3c16f67624-text/javascript">
+var aiptag = aiptag || {};
+aiptag.cmd = aiptag.cmd || [];
+aiptag.cmd.display = aiptag.cmd.display || [];
+aiptag.cmd.player = aiptag.cmd.player || [];
+
+//CMP tool settings
+aiptag.cmp = {
+	show: true,
+	position: "centered",  //centered or bottom
+	button: true,
+	buttonText: "Privacy settings",
+	buttonPosition: "bottom-left" //bottom-left, bottom-right, top-left, top-right
+}
+</script>
+<script async src="//api.adinplay.com/libs/aiptag/pub/BBB/bbbootstrap.com/tag.min.js" type="5ccf1a6ae2abfd3c16f67624-text/javascript"></script>
+
+
+<!-- Google Analytics -->
+<script type="5ccf1a6ae2abfd3c16f67624-text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-148526987-1', 'auto');
+ga('send', 'pageview');
+</script>
+<!-- End Google Analytics -->
+
+
+
+
+<script type="5ccf1a6ae2abfd3c16f67624-text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "7jevavmoz1");
+</script>      
+
+                 
+             
+
+
+     </head>
+     <body>
+        
+        <div id="main">
+            <header class="main-header dark-header fs-header sticky">
+                <div class="header-inner">
+                    <div class="logo-holder">
+                        <a href="/">
+
+                            
+                         <img class="lazy" data-src="https://bbbootstrap.com/assets/images/logo4.png" src="/assets/images/bg/loading-image.jpg" alt="BBBOOTSTRAP LOGO">
+                           
+                        </a>
+                    </div>
+                    <div class="header-search vis-header-search">
+
+                                                <form action="/search" method="GET">
+                            
+                        <div class="header-search-input-item">
+                            <input type="text" name="query" value="" autocomplete="off"  placeholder="Search snippets..." required>
+                        </div>
+                        
+                        <button class="header-search-button" type="submit">Search</button>
+                        <input type="hidden" name="_token" value="qhHZC4uVlXGzseIRte9U9F5NC8oFEskWEEfx07Ni">
+                         </form>
+                    </div>
+                    <div class="show-search-button"><i class="fa fa-search"></i> <span>Search</span></div>
+                    
+                        <a href="/login" class="add-list">Add Snippets <span><i class="fa fa-plus"></i></span></a>
+                        <a href="/login">
+                        <span class="show-reg-form "><i class="fa fa-sign-in"></i>Sign In</span>
+                        </a>
+                        <a href="/register">
+                        <span class="show-reg-form-signup hidden-xs"><i class="fa fa-user-secret"></i>Sign up</span>
+                        </a>
+
+                       
+
+                    
+
+                                        
+                    <div class="nav-holder hidden-xs">
+                        <nav>
+                            <ul>
+                              
+                                <li>
+                                    <span class="newtools">New</span>
+                                    <a href="/tools" class="content-items-new"> Tools <i class="fa fa-caret-down"></i></a>
+                                    
+                                    <ul>
+
+                                                                                <li><a class="widget-links-new" href="/tools/onlineeditor">Online Editor</a></li>
+                         
+                                                                                
+                                        <li><a href="/colors">Color Palette</a></li>
+                                        <li><a class="widget-links-new" href="/tools/gradientgenerator">Gradient Generator<span>New</span></a></li>
+                                        <li>
+                                            <a href="#">Beautifier <i class="fa fa-caret-down"></i></a>
+                                  
+                                            <ul>
+                                                <li><a href="/tools/html-beautifier">HTML Beautifier</a></li>
+                                                <li><a href="/tools/css-beautifier">CSS Beautifier</a></li>
+                                                <li><a href="/tools/javascript-beautifier">JS Beautifier</a></li>  
+                                            </ul>
+                                       
+                                        </li>
+                                        <li>
+                                            <a href="/icons">Icons <i class="fa fa-caret-down"></i></a>
+                                  
+                                            <ul>
+                                                <li><a href="/faicons">Font Awesome</a></li>
+                                                <li><a href="/mdicons">Material Design</a></li>
+                                                
+                                            </ul>
+                                       
+                                        </li>
+
+                                       
+                                       
+                                    </ul>
+                             
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+
+                                        <div class="nav-holder hidden-xs" style="margin-right: -9px;">
+                        <nav>
+                            <ul>
+                              
+                                <li>
+                                    <a href="/upgrade-pro">Upgrade - go pro</a>
+                             
+                                </li>
+
+                            </ul>
+                        </nav>
+                    </div>
+                                    
+                </div>
+                
+            </header>
+
+          
+
+<script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://bbbootstrap.com/snippets/bootstrap-4-ecommerce-products-list-range-filters-89673127"
+      },
+      "headline": "Bootstrap 4 Ecommerce products list with range filters Example",
+      "description": "Bootstrap 4 Ecommerce products list with range filters snippet for your project 📌📌. this snippet is created using HTML, CSS, Bootstrap 4, Javascript",
+      "image": "https://i.imgur.com/t39RIrl.png",  
+      "author": {
+        "@type": "Person",
+        "name": "Anand Vunnam"
+      },  
+      "publisher": {
+        "@type": "Organization",
+        "name": "BBBootstrap.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://bbbootstrap.com/assets/images/logo4.png"
+        }
+      },
+      "datePublished": "2021-01-17 15:06:33",
+      "dateModified" : "2021-01-18 07:45:53"
+    }
+    </script>
+
+
+<style type="text/css">
+    .box-widget.widget-posts li {
+     padding: 8px 0;
+     margin-bottom: 10px !important;
+    }
+    
+    .widget-posts{
+     height: 388px !important;
+    }
+    
+    .post-opt{
+     font-size: 14px;
+    }
+
+    .full-screen:hover{
+     color:#4db7fe;
+    } 
+    #addcomments{
+     margin-top: 10px !important;
+    }
+    
+    #loader {
+    z-index: 1;
+    border: 4px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 4px solid blue;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+    .content-middle{
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(151, 151, 151) !important;
+    }
+
+    .loading-content{
+        display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 25px;
+    color:#fff;
+    }
+
+
+    
+    @-webkit-keyframes spin {
+                         0% { -webkit-transform: rotate(0deg); }
+                         100% { -webkit-transform: rotate(360deg); }
+                         }
+    
+                         @keyframes  spin {
+                         0% { transform: rotate(0deg); }
+                         100% { transform: rotate(360deg); }
+                         }
+    
+    
+                         .preview-container-back {
+                             height: 100%;
+                             opacity: 0.1;
+                             /* background-image: url(https://i.imgur.com/t39RIrl.png); */
+                             /* background-image: url(/assets/images/bg/loading-image.jpg); */
+                             background-color: #000;
+                             /* background-repeat: no-repeat;
+                             background-position: center center; */
+                         }
+    
+    
+                         .btn-div{
+                         position: absolute;
+                         top: 50%;
+                         left: 45%;
+                       }
+                      .btn-div .unlock{
+    
+                         background: #4db7fe;
+                         padding: 17px;
+                         border-radius: 6px;
+                         color: #fff;
+                         padding-left: 34px;
+                         padding-right: 34px;
+                         font-size: 15px;
+                         border: none;
+                         cursor: pointer;
+    
+                       }
+    
+    
+                       .btn-div .unlock:hover{
+    
+                         background:#1094ec;
+                     
+    
+                         }
+    
+                       .background {
+      background-position: bottom;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
+      width: 100%;
+      filter: blur(5px) !important;
+      -webkit-filter: blur(8px);
+    }
+    
+    
+    .htmledit{
+     
+     background-image: url(https://i.imgur.com/cZccoP2.jpg);
+    
+    }
+    
+    .cssedit{
+    
+     background-image: url(https://i.imgur.com/yf1EYV2.jpg);
+    }
+    
+    
+    .jsedit{
+    
+    background-image: url(https://i.imgur.com/SL0O2lB.png);
+    }
+    
+    .blur {
+      background: rgba(255, 255, 255, 0.2); // Make sure this color has an opacity of less than 1
+      backdrop-filter: blur(8px); // This be the blur
+      height: 100vh;
+    	width: 50%;
+    }
+    
+    .profile-edit-page-header h2 {
+     text-align: left;
+     font-size: 16px !important;
+     color: green !important;
+     font-weight: 900 !important;
+     float: left;
+     margin-top: -6px !important;
+    }
+
+    .card-img-top{
+        image-rendering: -moz-crisp-edges; /* Firefox */
+image-rendering: -o-crisp-edges; /* Opera */
+image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+image-rendering: crisp-edges;
+-ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+    }
+    
+</style>
+<div id="wrapper">
+    <div class="content">
+        <div class="profile-edit-page-header hidden-xs flex-content">
+            
+
+                            <span></span>
+            
+            
+            <ol class="breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                  <a itemscope itemtype="http://schema.org/WebPage" itemprop="item" href="/" itemid="/">
+                    <span class="child" itemprop="name">Home</span>
+                  </a>
+                  <meta itemprop="position" content="1" />
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                  <a itemscope itemtype="http://schema.org/WebPage" itemprop="item" href="/snippets" itemid="/snippets">
+                    <span class="child" itemprop="name">snippets</span>
+                  </a>
+                  <meta itemprop="position" content="2" />
+                </li>
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                  <span itemscope itemtype="http://schema.org/WebPage" itemprop="item" itemid="/snippets/bootstrap-4-ecommerce-products-list-range-filters-89673127">
+                    <span itemprop="name">Bootstrap 4 Ecommerce products list with range filters</span>
+                  </span>
+                  <meta itemprop="position" content="3" />
+                </li>
+              </ol>
+        
+        </div>
+        <section class="gray-section" id="sec1" style="padding: 18px 0;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="list-single-main-wrapper fl-wrap" id="sec2">
+
+                            <article>
+
+                                <div class="list-single-main-item fl-wrap snippet-items">
+
+                                    <div class="row">
+
+                                        <div class="col-md-9">
+                                            <h1 class="snippet-title">Bootstrap 4 Ecommerce products list with range filters                                                                                            </h1>
+                                        </div>
+
+
+
+                            <div class="col-md-3">
+
+                                <div class="fl-wrap list-single-header-column" style="position: relative;
+    margin-top: -4px;">
+
+                                
+
+                                
+                                        <a class="bbb-review" href="/register" data-balloon-pos="up" aria-label="Login to download" style="top: 8px !important;"><i class="fa fa-download bbb-icons" style="padding-right: 1px;"></i></a>
+
+
+                                
+                            
+                                
+                                        <!--Likes Start-->
+
+                                        
+                                        <a href="/register">
+                                            <span class="viewed-counter bbb-review" data-balloon-pos="up" aria-label="Signin to hit like"><i class="fa fa-thumbs-o-up bbb-icons"></i>9</span>
+
+
+                                        
+
+                                        <!--Likes End-->
+
+<!--Comment and Embed Start-->
+
+<a class="custom-scroll-link bbb-review" href="#add-comment"><i class="fa fa-comments-o bbb-icons"></i></a>
+
+                    
+
+    <a class="bbb-review modal-open-embed" href="#" style="top: 8px !important; margin-right: 3px !important;">Embed</a>
+    
+<!--Comment and Embed End-->    
+
+                                
+                                
+                                </div>
+                                        
+                            </div>
+
+                                        
+
+                                    </div>
+
+                                    <span class="fw-separator"></span>
+
+
+                                    <div class="post-author" itemprop="author" itemscope itemtype="https://schema.org/Person"><a href="/users/anand-vunnam-78681"><img class="lazy" itemprop="image" src="/assets/images/bg/loading-image.jpg" data-src="https://lh3.googleusercontent.com/a-/AOh14Gi84DdZHT6F_Ihkve06hFraLdlqXexPCkPMmnsDxg" alt="Anand Vunnam">
+
+                                            <div class="post-opt">
+                                                <ul class="user-item-list">
+                                                    <li><i class="fa fa-user"></i> <span><a href="/users/anand-vunnam-78681" ><span itemprop="name">Anand Vunnam</span></a></span>
+                                                        <input type="hidden" id="receiver_id" value="6784">
+                                                        <input type="hidden" name="_token" id="csrf-token" value="qhHZC4uVlXGzseIRte9U9F5NC8oFEskWEEfx07Ni" />
+                                                        
+
+                                                       - <a href="/register"><span class="follow_user">Follow</span></a>
+
+                                                        
+
+                                                    </li>
+                                                    <li><i class="fa fa-calendar-check-o"></i> <span>9 month&#039;s ago</span></li>
+
+                                                    <li><i class="fa fa-arrows-alt"></i> <a target="_blank" href="/snippets/full-screen/bootstrap-4-ecommerce-products-list-range-filters-89673127" data-abc="true"><span class="full-screen">view full screen</span></a></li>
+
+                                                    <li><i class="fa fa-eye"></i> <span> 7.8K</span></li>
+
+                                                    <li><i class="fa fa-tags"></i>
+
+                                                        <a href="/tags/ecommerce">ecommerce</a>, <a href="/tags/filter">filter</a>, <a href="/tags/slider">slider</a>, <a href="/tags/collapse">collapse</a>, <a href="/tags/navbar">navbar</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                    </div>
+
+
+                                    
+
+
+                                    
+                                    
+                                    <div class="share-holder hid-share fork-snippet">
+                                        <a href="/register">
+                                            <div class="showfork"><span>Fork this</span><i class="fa fa-code-fork rotating"></i></div>
+                                        </a>
+
+                                    </div>
+
+
+                                    
+                                    
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <input type="text" id="bootstrap_css_link" aria-hidden="true" class="offscreen form-control" value="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <input type="text" id="bootstrap_css_link_script" aria-hidden="true" class="offscreen form-control" value="&lt;link href=&#039;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css&#039;&gt;">
+
+
+        <input type="text" id="bootstrap_js_link" aria-hidden="true" class="offscreen form-control" value="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
+        <input type="text" id="bootstrap_js_link_script" aria-hidden="true" class="offscreen form-control" value="&lt;script src=&#039;https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js&#039;&gt;&lt;/script&gt;">
+
+        
+        <input type="text" id="font_css_link" aria-hidden="true" class="offscreen form-control" value="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+        <input type="text" id="font_css_link_script" aria-hidden="true" class="offscreen form-control" value="&lt;link href=&#039;https://use.fontawesome.com/releases/v5.7.2/css/all.css&#039;&gt;">
+
+        
+                <input type="text" id="js_link" aria-hidden="true" class="offscreen form-control" value="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        <input type="text" id="js_link_script" aria-hidden="true" class="offscreen form-control" value="&lt;script src=&#039;https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js&#039;&gt;&lt;/script&gt;">
+
+        
+        <section class="gray-section" id="sec1" style="padding: 0px 0;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-10">
+
+                        <div class="tab_container">
+                            <input id="tab1" type="radio" name="tabs" checked>
+                            <label for="tab1" class="labeltab1"><i class="fa fa-eye"></i><span class="content-tab">PREVIEW</span></label>
+
+                            <input id="tab2" type="radio" name="tabs">
+                            <label for="tab2"><i class="fa fa-code"></i><span class="content-tab">HTML&nbsp;&nbsp;&nbsp;</span></label>
+
+                            <input id="tab3" type="radio" name="tabs">
+                            <label for="tab3"><i class="fa fa-css3"></i><span class="content-tab">CSS&nbsp;&nbsp;&nbsp;&nbsp;</span></label>
+
+                            <input id="tab4" type="radio" name="tabs">
+                            <label for="tab4"><i class="fa fa-file-code-o"></i><span class="content-tab">JAVASCRIPT</span></label>
+
+                            <input id="tab5" type="radio" name="tabs">
+                            <label for="tab5" class="labeltab5"><i class="fa fa-file-zip-o"></i><span class="content-tab">RESOURCES</span></label>
+
+                            <section id="content1" class="tab-content content-middle">
+                                <div id="preview-container" class="preview-container-back">
+
+                                </div>
+                                <div class="loading-content">
+                                    <div id="loader"></div>
+                                    <span>Preview Loading...</span>
+                                    
+                                </div>                            
+                            </section>
+
+                            <section id="content2" class="tab-content">
+                                
+                                <div id="htmlEditor">
+
+
+                                </div>
+
+                                
+                            </section>
+
+                            <section id="content3" class="tab-content">
+
+                                
+                                <div id="cssEditor">
+
+
+                                </div>
+
+                                
+                            </section>
+
+                            <section id="content4" class="tab-content">
+
+                                
+                                <div id="jsEditor">
+
+
+                                </div>
+
+                                
+
+                            </section>
+
+                            <section id="content5" class="tab-content">
+                                
+                                <div class="page-content page-container" id="page-content">
+                                    <div class="padding">
+                                        <div class="custom-form" style="padding: 8px;">
+                                            <div class="table-responsive">
+                                                <table class="icntable table-striped scripttable" style="margin-top: 13px;">
+                                                    <thead>
+                                                        <tr>
+                                                           
+                                                            <th style="width:20%"></th>
+                                                            <th style="width:50%"><b>Script</b></th>
+                                                            <th style="width:10%"></th>
+                                                            <th style="width:5%"></th>
+                                                            <th style="width:20%"><b>Action</b></th>
+
+
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+
+                                                        
+
+                                                        <tr class="v-middle">
+                                                            <td class="text-start">Bootstrap 4 CSS</td>
+                                                            <td class="flex">
+                                                                <span class="tut">https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css</span>
+                                                            </td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td><span id="bootstrap_css" class="icn-badge  btn btn-success bg-primary-lt mr-4" onclick="if (!window.__cfRLUnblockHandlers) return false; copy('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css',this)" data-cf-modified-5ccf1a6ae2abfd3c16f67624-="">COPY CDN</span></td>
+                                                        </tr>
+                                                        
+
+                                                        <tr class="v-middle">
+                                                            <td class="text-start">Bootstrap 4 JS</td>
+                                                            <td class="flex">
+                                                                <span class="tut">https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js</span>
+                                                            </td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td><span id="bootstrap_js" class="icn-badge bg-primary-lt btn btn-success mr-4" onclick="if (!window.__cfRLUnblockHandlers) return false; copy('https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js',this)" data-cf-modified-5ccf1a6ae2abfd3c16f67624-="">COPY CDN</span></td>
+
+                                                        </tr>
+                                                            
+                                                       
+                                                        
+
+                                                        
+
+
+
+                                                        
+                                                        <tr class="v-middle">
+                                                            
+                                                            <td class="text-start">Icons</td>
+                                                            <td class="flex">
+                                                                <span class="tut">https://use.fontawesome.com/releases/v5.7.2/css/all.css</span>
+                                                            </td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td><span id="font_css_link" class="icn-badge bg-primary-lt btn btn-success mr-4" onclick="if (!window.__cfRLUnblockHandlers) return false; copy('https://use.fontawesome.com/releases/v5.7.2/css/all.css',this)" data-cf-modified-5ccf1a6ae2abfd3c16f67624-="">COPY CDN</span></td>
+                                                            
+                                                        </tr>
+
+                                                        
+                                                        
+
+                                                         
+                                                        
+                                                           <tr class="v-middle">
+                                                            <td class="text-start">JS</td>
+                                                            <td class="flex">
+                                                                <span class="tut">https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js</span>
+                                                            </td>
+                                                            <td></td>
+                                                            <td></td>
+                                                            <td><span id="js_js" class="icn-badge bg-primary-lt btn btn-success mr-4" onclick="if (!window.__cfRLUnblockHandlers) return false; copy('https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js',this)" data-cf-modified-5ccf1a6ae2abfd3c16f67624-="">COPY CDN</span></td>
+                                                    
+                                                            </tr>
+
+                                                          
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </section>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-2">
+
+
+                        <section class="gray-section hidden-xs" style="background: #dfdfdf; padding:8px 0;" id="sec1">
+                            <div class="container-fluid" style="padding-left: 0px;
+    padding-right: 0px;">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="list-single-main-wrapper fl-wrap" id="sec2">
+
+                                            <article>
+
+                                                <div class="list-single-main-item fl-wrap snippet-items" style="height:622px !important; padding: 9px 9px;">
+
+
+
+                                                    
+                                                    
+
+                                                    <div id='bbbootstrap-com_160X600'>
+    <script type="5ccf1a6ae2abfd3c16f67624-text/javascript">
+    aiptag.cmd.display.push(function() { aipDisplayTag.display('bbbootstrap-com_160X600'); });
+    </script>
+</div>  
+                                                    
+
+
+
+                                                </div>
+                                            </article>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </section>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="gray-section hidden-xs" id="sec1" style="padding: 10px 0;">
+            <div class="container-fluid">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="d-flex justify-content-between align-items-center user-related">    
+                              <a class="view-snippet-text" href="/users/anand-vunnam-78681">View more snippets created by <span>Anand Vunnam</span></a>
+                              <a class="view-button" href="/users/anand-vunnam-78681">View Now</a>
+                      </div>
+                  </div>
+              </div>
+            </div> 
+          </section>    
+           
+        
+        <section class="gray-section" id="sec1" style="padding: 9px 0;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="mylist-carousel">
+                            <div class="list-single-main-wrapper fl-wrap" id="sec2">
+
+
+
+                                <div class="list-single-main-item fl-wrap snippet-items" style="border: 1px solid #4eb7f8;    margin-bottom: -10px;">
+
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="pull-left">
+                                                <span style="font-size: 20px;"><a href="/similar/bootstrap-4-ecommerce-products-list-range-filters-89673127">Similar Snippets</a><a style="font-size: 15px;
+    color: #4db6f8;" href="/similar/bootstrap-4-ecommerce-products-list-range-filters-89673127">(View all)</a></span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="pull-right">
+
+                                                <div class="swiper-button-prev sw-btn"><i class="fa fa-long-arrow-left"></i></div>
+                                                <div class="swiper-button-next sw-btn"><i class="fa fa-long-arrow-right"></i></div>
+
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="listing-carousel">
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/bootstrap-ecommerce-product-category-page-navbar-and-filters-66782703">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>12.4K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 4</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/keN32DP.jpg" style="width: 100%;height: 250px;" alt="ecommerce product category page with navbar and filters">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/bootstrap-ecommerce-product-category-page-navbar-and-filters-66782703">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 4 ecommerce product category page with navbar and filters</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/bootstrap-ecommerce-product-list-sidebar-filters-45421504">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>14.6K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 4</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/GgPs1Mu.jpg" style="width: 100%;height: 250px;" alt="ecommerce product list with sidebar filters">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/bootstrap-ecommerce-product-list-sidebar-filters-45421504">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 4 ecommerce product list with sidebar filters</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/bootstrap-4-ecommerce-product-list-filters-98552250">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>9K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 4</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/cRjX5Jg.png" style="width: 100%;height: 250px;" alt="ecommerce product list with filters">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/bootstrap-4-ecommerce-product-list-filters-98552250">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 4 ecommerce product list with filters</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/ecommerce-recently-viewed-product-carousel-using-owlcarousel2-library-40656175">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>18.3K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 4</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/w5qr3aP.png" style="width: 100%;height: 250px;" alt="Ecommerce recently viewed product carousel using OwlCarousel2 library">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/ecommerce-recently-viewed-product-carousel-using-owlcarousel2-library-40656175">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 4 Ecommerce recently viewed product carousel using OwlCarousel2 library</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/e-commerce-drawer-card-discount-20400264">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>208</strong></small>
+                                                <span class="carousel-framework-bs">Pure CSS</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/XYeWfvQ.png" style="width: 100%;height: 250px;" alt="e-commerce drawer card with discount">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/e-commerce-drawer-card-discount-20400264">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Pure CSS e-commerce drawer card with discount</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/bootstrap-5-hotels-listing-filters-and-sidebar-95153575">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>2.6K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 5</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/zYismkR.png" style="width: 100%;height: 250px;" alt="Hotels listing with filters and sidebar">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/bootstrap-5-hotels-listing-filters-and-sidebar-95153575">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 5 Hotels listing with filters and sidebar</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/ecommerce-menu-navbar-search-89616595">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>15.6K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 4</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/lMAzucU.png" style="width: 100%;height: 250px;" alt="ecommerce menu navbar with search">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/ecommerce-menu-navbar-search-89616595">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 4 ecommerce menu navbar with search</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/bootstrap-5-ecommerce-navbar-search-inputs-51696208">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>5K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 5</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/YAqs1VZ.png" style="width: 100%;height: 250px;" alt="ecommerce navbar with search inputs">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/bootstrap-5-ecommerce-navbar-search-inputs-51696208">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 5 ecommerce navbar with search inputs</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/bootstrap-ecommerce-product-listings-navbar-42254845">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>6.7K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 5</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/7G09iOQ.png" style="width: 100%;height: 250px;" alt="ecommerce product listings with navbar">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/bootstrap-ecommerce-product-listings-navbar-42254845">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 5 ecommerce product listings with navbar</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/bootstrap-5-e-commerce-page-navbar-and-dropdown-21205362">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>2.9K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 5</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/wgEjWA0.png" style="width: 100%;height: 250px;" alt="e-commerce page with navbar and dropdown">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/bootstrap-5-e-commerce-page-navbar-and-dropdown-21205362">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 5 e-commerce page with navbar and dropdown</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/ecommerce-navbar-18505241">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>12.2K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 3</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/ND1hxBV.png" style="width: 100%;height: 250px;" alt="Ecommerce navbar ">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/ecommerce-navbar-18505241">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 3 Ecommerce navbar </h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/bootstrap-5-ecommerce-prodcut-list-navbar-and-hover-effects-66154451">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>2.4K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 5</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/Rex8vc7.gif" style="width: 100%;height: 250px;" alt="Ecommerce prodcut list with navbar and hover effects">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/bootstrap-5-ecommerce-prodcut-list-navbar-and-hover-effects-66154451">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 5 Ecommerce prodcut list with navbar and hover effects</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/bootstrap-5-ecommerce-user-dashboard-order-tracking-72811810">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>6.2K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 5</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/wY0MAHf.jpg" style="width: 100%;height: 250px;" alt="Ecommerce user dashboard with order tracking">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/bootstrap-5-ecommerce-user-dashboard-order-tracking-72811810">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 5 Ecommerce user dashboard with order tracking</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/bootstrap-5-e-commerce-navigation-product-examples-80511014">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>2.9K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 5</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/8jGlW3i.png" style="width: 100%;height: 250px;" alt="e-commerce navigation with product examples">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/bootstrap-5-e-commerce-navigation-product-examples-80511014">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 5 e-commerce navigation with product examples</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/half-page-image-slider-dynamic-navbar-74751043">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>12.7K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 4</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/QCnA1st.png" style="width: 100%;height: 250px;" alt="Half Page Image Slider with Dynamic navbar">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/half-page-image-slider-dynamic-navbar-74751043">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 4 Half Page Image Slider with Dynamic navbar</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/bootstrap-5-fancy-website-template-navbar-79733976">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>1.1K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 5</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/jUmgii2.png" style="width: 100%;height: 250px;" alt="Fancy website template with navbar">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/bootstrap-5-fancy-website-template-navbar-79733976">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 5 Fancy website template with navbar</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/e-commerce-card-increaser-and-decreaser-price-button-58115743">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>89</strong></small>
+                                                <span class="carousel-framework-bs">Pure CSS</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/Z3iLBPY.png" style="width: 100%;height: 250px;" alt="e-commerce card with plus &amp; minus price button">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/e-commerce-card-increaser-and-decreaser-price-button-58115743">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Pure CSS e-commerce card with plus &amp; minus price button</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                        
+                                        
+                                        
+                                        
+
+
+
+                                        <div class="snippet-card snippet-carousel-card">
+                                            <a href="/snippets/ecommerce-latest-product-carousel-using-owlcarousel2-58034731">
+                                            <small class="carousel-views"><i class="fa fa-eye"></i> <strong>10K</strong></small>
+                                                <span class="carousel-framework-bs">Bootstrap 4</span>
+                                                <img class="card-img-top lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/hZnWf0o.png" style="width: 100%;height: 250px;" alt="Ecommerce latest product Carousel using OwlCarousel2">
+                                                
+                                            </a>
+                                            <div class="snippet-title" style="padding-top: 10px;
+                                                 font-size: 20px;">
+                                                <a href="/snippets/ecommerce-latest-product-carousel-using-owlcarousel2-58034731">
+                                                    <h3 style="font-size: 15px;" class="text-ellipsis">Bootstrap 4 Ecommerce latest product Carousel using OwlCarousel2</h3>
+                                                </a>
+
+                                            </div>
+
+                                        </div>
+
+                                        
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+        </section>
+
+        
+        
+        
+        <section class="gray-section" id="sec1" style="padding: 18px 0;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="list-single-main-wrapper fl-wrap" id="sec2">
+
+                            <article>
+
+                                <div class="list-single-main-item fl-wrap snippet-items">
+
+                                    <div id='bbbootstrap-com_970X250'>
+    <script type="5ccf1a6ae2abfd3c16f67624-text/javascript">
+    aiptag.cmd.display.push(function() { aipDisplayTag.display('bbbootstrap-com_970X250'); });
+    </script>
+</div>      
+                                </div>
+                            </article>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <section class="gray-section" id="sec1" style="padding: 10px 0 !important;">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="list-single-main-item fl-wrap bbb-comment-section" id="sec5">
+                            <div class="list-single-main-item-title fl-wrap">
+                                <h3>Add Comment/Questions</h3>
+                            </div>
+
+                            <div id="add-review" class="add-review-box">
+
+                                <form id="add-comment" class="add-comment custom-form">
+                                    <input type="hidden" name="_token" value="qhHZC4uVlXGzseIRte9U9F5NC8oFEskWEEfx07Ni">                                    <fieldset>
+                                                                                <textarea id="commenttext" cols="100" rows="30" placeholder="Add your comments here" class="mention" style="height: 98px !important;" aria-labelledBy="BBBootstrap"></textarea>
+
+                                                                            </fieldset>
+
+                                    
+                                    <a href="/login" class="btn  big-btn  color-bg flat-btn"><i class="fa fa-sign-in"></i> Login</a>
+                                    <a href="/register" class="btn  big-btn  color-bg flat-btn"><i class="fa fa-user-secret"></i> Signup</a>
+
+
+                                    
+                                </form>
+                            </div>
+
+                        </div>
+
+
+                        <div class="list-single-main-item fl-wrap user-comment-box" id="sec4">
+
+                            <div class="reviews-comments-wrap reviews-comments-wrap-box" id="all-comment-section">
+
+
+
+                                
+                                <div class="text-center no_snippets" style="padding:9px;    margin-top: -31px;">
+
+                                    <img class="lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/VcxpBwg.png" alt="Comment image" width="102">
+                                    <h3 style="font-weight: 500; font-size: 17px;">Be the first to comment</h3>
+
+
+                                </div>
+
+
+                                
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="col-md-4">
+
+
+
+
+                        <div class="box-widget-wrap">
+
+
+                            <div class="box-widget-item fl-wrap">
+
+                                <div class="box-widget widget-posts">
+
+                                    <div class="flex-content p-2">
+                                        <h6 class="recent-snippet">Latest snippets</h6>
+                                        <a href="/snippets" class="recent-view-all">View all</a>
+                                    </div>
+                                    <div class="box-widget-content">
+
+                                        <ul>
+
+                                                                                        
+                                            
+                                            
+                                            <li class="clearfix">
+                                                <a href="/snippets/e-commerce-card-increaser-and-decreaser-price-button-58115743" class="widget-posts-img" style="border: 1px solid #eeeeee;"><img class="lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/Z3iLBPY.png" alt="e-commerce card with plus & minus price button" style="height: 55px;"></a>
+                                                <div class="widget-posts-descr">
+                                                    <a href="/snippets/e-commerce-card-increaser-and-decreaser-price-button-58115743" title="">Pure CSS e-commerce card with plus &amp; minus price button</a>
+                                                    
+                                                    
+                                                 <div class="flex-content">
+                                                    <span class="widget-posts-date"><i class="fa fa-calendar-check-o"></i>17 hour&#039;s ago</span> 
+                                                                                                    </div>
+
+                                                </div>
+                                            </li>
+
+                                          
+
+                                            
+                                            
+                                            
+                                            <li class="clearfix">
+                                                <a href="/snippets/contact-us-form-floating-social-icons-25962263" class="widget-posts-img" style="border: 1px solid #eeeeee;"><img class="lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/V7Ng6Lg.png" alt="contact us form with floating social icons" style="height: 55px;"></a>
+                                                <div class="widget-posts-descr">
+                                                    <a href="/snippets/contact-us-form-floating-social-icons-25962263" title="">Pure CSS contact us form with floating social icons</a>
+                                                    
+                                                    
+                                                 <div class="flex-content">
+                                                    <span class="widget-posts-date"><i class="fa fa-calendar-check-o"></i>1 day ago</span> 
+                                                                                                    </div>
+
+                                                </div>
+                                            </li>
+
+                                          
+
+                                            
+                                            
+                                            
+                                            <li class="clearfix">
+                                                <a href="/snippets/e-commerce-drawer-card-discount-20400264" class="widget-posts-img" style="border: 1px solid #eeeeee;"><img class="lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/XYeWfvQ.png" alt="e-commerce drawer card with discount" style="height: 55px;"></a>
+                                                <div class="widget-posts-descr">
+                                                    <a href="/snippets/e-commerce-drawer-card-discount-20400264" title="">Pure CSS e-commerce drawer card with discount</a>
+                                                    
+                                                    
+                                                 <div class="flex-content">
+                                                    <span class="widget-posts-date"><i class="fa fa-calendar-check-o"></i>3 day&#039;s ago</span> 
+                                                                                                    </div>
+
+                                                </div>
+                                            </li>
+
+                                          
+
+                                            
+                                        </ul>
+
+
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            
+                        </div>
+
+                    </div>
+                </div>
+        </section>
+
+        <section class="gray-section" id="sec1" style="padding: 0px 0;">
+            <div class="list-single-main-wrapper fl-wrap" id="sec2">
+
+                <div class="container-fluid">
+                    <div class="accordion">
+                        <a class="toggle act-accordion" href="#"> About this snippet<i class="fa fa-angle-down"></i></a>
+                        <div class="accordion-inner visible" style="display: block;">
+                            <p style="    font-size: 14px; color:#51535d;">Bootstrap 4 Ecommerce products list with range filters snippet is created by <a href="/users/anand-vunnam-78681">Anand Vunnam</a> using Bootstrap 4, Javascript. This snippet is free and open source hence you can use it in your project.Bootstrap 4 Ecommerce products list with range filters snippet example is best for
+
+                                all kind of projects.A great starter for your new awesome project with 1000+ <a href="/faicons">Font Awesome Icons</a>, 4000+ <a href="/mdicons">Material Design Icons</a> and <a href="/colors">Material Design Colors</a> at BBBootstrap.com.
+
+                            </p>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+
+
+
+
+        <div class="main-register-wrap modal">
+            <div class="main-overlay"></div>
+            <div class="main-register-holder">
+                <div class="main-register fl-wrap">
+                    <div class="close-reg"><i class="fa fa-times"></i></div>
+                    <h3>Download limit exceeded</h3>
+                    <div class="soc-log fl-wrap">
+                        <p>You have exceeded a daily download limit. BBBootstrap.com offers every user to download 3 snippets daily.Upgrade to download unlimited snippets!</p>
+                        <br>
+
+                        <a target="_blank" href="/upgrade-pro" rel="noreferrer" style="background: blue; font-size: 18px;">Upgrade - Go Pro</a>
+
+
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="main-register-wrap modal-embed">
+            <div class="main-overlay"></div>
+            <div class="main-register-holder">
+                <div class="main-register fl-wrap">
+                    <div class="close-reg-embed"><i class="fa fa-times"></i></div>
+                    <h3>Embed this snippet</h3>
+                    <div class="soc-log fl-wrap custom-form" id="iframe-code">
+                        <textarea><iframe src="https://bbbootstrap.com/snippets/embed/bootstrap-4-ecommerce-products-list-range-filters-89673127" name="BBBootstrap Snippets" scrolling="No" height="500px" width="100%" style="border: none;"></iframe>
+                            </textarea>
+                        </code>
+                        </pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+ 
+
+
+        <div class="main-register-wrap modal-unlock">
+            <div class="main-overlay"></div>
+            <div class="main-register-holder">
+                <div class="main-register fl-wrap">
+                    <div class="close-reg-unlock"><i class="fa fa-times"></i></div>
+                    
+                                       
+                </div>
+            </div>
+        </div>
+
+        <div class="main-register-wrap modal_download_thanks">
+            <div class="main-overlay"></div>
+            <div class="main-register-holder">
+                <div class="main-register fl-wrap">
+                    <div class="close-reg-modal_download_thanks"><i class="fa fa-times"></i></div>
+                    <h3>Say Thanks to Anand Vunnam</h3>
+
+
+                    <div class="circle-image"> <img class="lazy" src="/assets/images/bg/loading-image.jpg" data-src="https://i.imgur.com/SQqspgI.png" width="100" alt="Anand Vunnam"> </div>
+
+                    <div style="padding-left: 20px; padding-right: 20px; margin-bottom:20px; margin-top:10px;">
+                        <span style="font-size: 13px;">Our creators love hear from you and seeing how you've used their snippets. Show your appreciation by donating and following.</span>
+                    </div>
+                    <div>
+
+
+
+                    </div>
+
+
+                    <div class="list-widget-social" style="margin-left: 40px; padding-right: 13px;">
+                        <ul>
+                                                       <li><button onClick="if (!window.__cfRLUnblockHandlers) return false; javascript:window.open('/upgrade-pro', '_blank');" class="btn  small-btn  color-bg flat-btn" style="border: none;height: 36px;line-height: 9px;cursor:pointer; padding-left:5px !important; padding-right:14px !important;" data-cf-modified-5ccf1a6ae2abfd3c16f67624-=""><i class="fa fa-paypal" aria-hidden="true"></i> Upgrade - Go Pro</button></li>
+                                                       <li><button onClick="if (!window.__cfRLUnblockHandlers) return false; javascript:window.open('https://bit.ly/302Rh56', '_blank');" class="btn  small-btn  color-bg flat-btn" style="border: none;height: 36px;line-height: 9px;cursor:pointer; padding-left:5px !important; padding-right:14px !important;" data-cf-modified-5ccf1a6ae2abfd3c16f67624-=""><i class="fa fa-youtube" aria-hidden="true"></i> Subscribe on youtube</button></li>
+                            <li><a href="https://www.instagram.com/bbbootstrap_/" rel="noreferrer" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<!--CSS WORK-->
+
+<input type="hidden" value="&lt;div class=&quot;container&quot;&gt; &lt;div class=&quot;bg-white rounded d-flex align-items-center justify-content-between&quot; id=&quot;header&quot;&gt; &lt;button class=&quot;btn btn-hide text-uppercase&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#filterbar&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;filterbar&quot; id=&quot;filter-btn&quot; onclick=&quot;changeBtnTxt()&quot;&gt; &lt;span class=&quot;fas fa-angle-left&quot; id=&quot;filter-angle&quot;&gt;&lt;/span&gt; &lt;span id=&quot;btn-txt&quot;&gt;Hide filters&lt;/span&gt; &lt;/button&gt; &lt;nav class=&quot;navbar navbar-expand-lg navbar-light pl-lg-0 pl-auto&quot;&gt; &lt;button class=&quot;navbar-toggler&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#mynav&quot; aria-controls=&quot;mynav&quot; aria-expanded=&quot;false&quot; aria-label=&quot;Toggle navigation&quot; onclick=&quot;chnageIcon()&quot; id=&quot;icon&quot;&gt; &lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt; &lt;/button&gt; &lt;div class=&quot;collapse navbar-collapse&quot; id=&quot;mynav&quot;&gt; &lt;ul class=&quot;navbar-nav d-lg-flex align-items-lg-center&quot;&gt; &lt;li class=&quot;nav-item active&quot;&gt; &lt;select name=&quot;sort&quot; id=&quot;sort&quot;&gt; &lt;option value=&quot;&quot; hidden selected&gt;Sort by&lt;/option&gt; &lt;option value=&quot;price&quot;&gt;Price&lt;/option&gt; &lt;option value=&quot;popularity&quot;&gt;Popularity&lt;/option&gt; &lt;option value=&quot;rating&quot;&gt;Rating&lt;/option&gt; &lt;/select&gt; &lt;/li&gt; &lt;li class=&quot;nav-item d-inline-flex align-items-center justify-content-between mb-lg-0 mb-3&quot;&gt; &lt;div class=&quot;d-inline-flex align-items-center mx-lg-2&quot; id=&quot;select2&quot;&gt; &lt;div class=&quot;pl-2&quot;&gt;Products:&lt;/div&gt; &lt;select name=&quot;pro&quot; id=&quot;pro&quot;&gt; &lt;option value=&quot;18&quot;&gt;18&lt;/option&gt; &lt;option value=&quot;19&quot;&gt;19&lt;/option&gt; &lt;option value=&quot;20&quot;&gt;20&lt;/option&gt; &lt;/select&gt; &lt;/div&gt; &lt;div class=&quot;font-weight-bold mx-2 result&quot;&gt;18 from 200&lt;/div&gt; &lt;/li&gt; &lt;li class=&quot;nav-item d-lg-none d-inline-flex&quot;&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/div&gt; &lt;/nav&gt; &lt;div class=&quot;ml-auto mt-3 mr-2&quot;&gt; &lt;nav aria-label=&quot;Page navigation example&quot;&gt; &lt;ul class=&quot;pagination&quot;&gt; &lt;li class=&quot;page-item&quot;&gt; &lt;a class=&quot;page-link&quot; href=&quot;#&quot; aria-label=&quot;Previous&quot;&gt; &lt;span aria-hidden=&quot;true&quot; class=&quot;font-weight-bold&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;sr-only&quot;&gt;Previous&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;li class=&quot;page-item active&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;1&lt;/a&gt;&lt;/li&gt; &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;..&lt;/a&gt;&lt;/li&gt; &lt;li class=&quot;page-item&quot;&gt;&lt;a class=&quot;page-link&quot; href=&quot;#&quot;&gt;24&lt;/a&gt;&lt;/li&gt; &lt;li class=&quot;page-item&quot;&gt; &lt;a class=&quot;page-link&quot; href=&quot;#&quot; aria-label=&quot;Next&quot;&gt; &lt;span aria-hidden=&quot;true&quot; class=&quot;font-weight-bold&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;sr-only&quot;&gt;Next&lt;/span&gt; &lt;/a&gt; &lt;/li&gt; &lt;/ul&gt; &lt;/nav&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=&quot;content&quot; class=&quot;my-5&quot;&gt; &lt;div id=&quot;filterbar&quot; class=&quot;collapse&quot;&gt; &lt;div class=&quot;box border-bottom&quot;&gt; &lt;div class=&quot;form-group text-center&quot;&gt; &lt;div class=&quot;btn-group&quot; data-toggle=&quot;buttons&quot;&gt; &lt;label class=&quot;btn btn-success form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot;&gt; Reset &lt;/label&gt; &lt;label class=&quot;btn btn-success form-check-label active&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; checked&gt; Apply &lt;/label&gt; &lt;/div&gt; &lt;/div&gt; &lt;div&gt; &lt;label class=&quot;tick&quot;&gt;New &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;div&gt; &lt;label class=&quot;tick&quot;&gt;Sale &lt;input type=&quot;checkbox&quot;&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;box border-bottom&quot;&gt; &lt;div class=&quot;box-label text-uppercase d-flex align-items-center&quot;&gt;Outerwear &lt;button class=&quot;btn ml-auto&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#inner-box&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;inner-box&quot; id=&quot;out&quot; onclick=&quot;outerFilter()&quot;&gt; &lt;span class=&quot;fas fa-plus&quot;&gt;&lt;/span&gt; &lt;/button&gt; &lt;/div&gt; &lt;div id=&quot;inner-box&quot; class=&quot;collapse mt-2 mr-1&quot;&gt; &lt;div class=&quot;my-1&quot;&gt; &lt;label class=&quot;tick&quot;&gt;Windbreaker &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;my-1&quot;&gt; &lt;label class=&quot;tick&quot;&gt;Jumpsuit &lt;input type=&quot;checkbox&quot;&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;my-1&quot;&gt; &lt;label class=&quot;tick&quot;&gt;Jacket &lt;input type=&quot;checkbox&quot;&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;my-1&quot;&gt; &lt;label class=&quot;tick&quot;&gt;Coat &lt;input type=&quot;checkbox&quot;&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;my-1&quot;&gt; &lt;label class=&quot;tick&quot;&gt;Raincoat &lt;input type=&quot;checkbox&quot;&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;my-1&quot;&gt; &lt;label class=&quot;tick&quot;&gt;Handbag &lt;input type=&quot;checkbox&quot; checked&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;my-1&quot;&gt; &lt;label class=&quot;tick&quot;&gt;Warm vest &lt;input type=&quot;checkbox&quot;&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;my-1&quot;&gt; &lt;label class=&quot;tick&quot;&gt;Wallets &lt;input type=&quot;checkbox&quot; checked&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;box border-bottom&quot;&gt; &lt;div class=&quot;box-label text-uppercase d-flex align-items-center&quot;&gt;season &lt;button class=&quot;btn ml-auto&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#inner-box2&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;inner-box2&quot;&gt;&lt;span class=&quot;fas fa-plus&quot;&gt;&lt;/span&gt;&lt;/button&gt; &lt;/div&gt; &lt;div id=&quot;inner-box2&quot; class=&quot;collapse mt-2 mr-1&quot;&gt; &lt;div class=&quot;my-1&quot;&gt; &lt;label class=&quot;tick&quot;&gt;Spring &lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot;&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;my-1&quot;&gt; &lt;label class=&quot;tick&quot;&gt;Summer &lt;input type=&quot;checkbox&quot;&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;my-1&quot;&gt; &lt;label class=&quot;tick&quot;&gt;Autumn &lt;input type=&quot;checkbox&quot; checked&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;my-1&quot;&gt; &lt;label class=&quot;tick&quot;&gt;Winter &lt;input type=&quot;checkbox&quot;&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;my-1&quot;&gt; &lt;label class=&quot;tick&quot;&gt;Rainy &lt;input type=&quot;checkbox&quot;&gt; &lt;span class=&quot;check&quot;&gt;&lt;/span&gt; &lt;/label&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;box border-bottom&quot;&gt; &lt;div class=&quot;box-label text-uppercase d-flex align-items-center&quot;&gt;price &lt;button class=&quot;btn ml-auto&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#price&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;price&quot;&gt;&lt;span class=&quot;fas fa-plus&quot;&gt;&lt;/span&gt;&lt;/button&gt; &lt;/div&gt; &lt;div class=&quot;collapse&quot; id=&quot;price&quot;&gt; &lt;div class=&quot;middle&quot;&gt; &lt;div class=&quot;multi-range-slider&quot;&gt; &lt;input type=&quot;range&quot; id=&quot;input-left&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;10&quot;&gt; &lt;input type=&quot;range&quot; id=&quot;input-right&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;50&quot;&gt; &lt;div class=&quot;slider&quot;&gt; &lt;div class=&quot;track&quot;&gt;&lt;/div&gt; &lt;div class=&quot;range&quot;&gt;&lt;/div&gt; &lt;div class=&quot;thumb left&quot;&gt;&lt;/div&gt; &lt;div class=&quot;thumb right&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;d-flex align-items-center justify-content-between mt-2&quot;&gt; &lt;div&gt; &lt;span id=&quot;amount-left&quot; class=&quot;font-weight-bold&quot;&gt;&lt;/span&gt; uah &lt;/div&gt; &lt;div&gt; &lt;span id=&quot;amount-right&quot; class=&quot;font-weight-bold&quot;&gt;&lt;/span&gt; uah &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;box&quot;&gt; &lt;div class=&quot;box-label text-uppercase d-flex align-items-center&quot;&gt;size &lt;button class=&quot;btn ml-auto&quot; type=&quot;button&quot; data-toggle=&quot;collapse&quot; data-target=&quot;#size&quot; aria-expanded=&quot;false&quot; aria-controls=&quot;size&quot;&gt;&lt;span class=&quot;fas fa-plus&quot;&gt;&lt;/span&gt;&lt;/button&gt; &lt;/div&gt; &lt;div id=&quot;size&quot; class=&quot;collapse&quot;&gt; &lt;div class=&quot;btn-group d-flex align-items-center flex-wrap&quot; data-toggle=&quot;buttons&quot;&gt; &lt;label class=&quot;btn btn-success form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot;&gt; 80 &lt;/label&gt; &lt;label class=&quot;btn btn-success form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; checked&gt; 92 &lt;/label&gt; &lt;label class=&quot;btn btn-success form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; checked&gt; 102 &lt;/label&gt; &lt;label class=&quot;btn btn-success form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; checked&gt; 104 &lt;/label&gt; &lt;label class=&quot;btn btn-success form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; checked&gt; 106 &lt;/label&gt; &lt;label class=&quot;btn btn-success form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; checked&gt; 108 &lt;/label&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=&quot;products&quot;&gt; &lt;div class=&quot;row mx-0&quot;&gt; &lt;div class=&quot;col-lg-4 col-md-6&quot;&gt; &lt;div class=&quot;card d-flex flex-column align-items-center&quot;&gt; &lt;div class=&quot;product-name&quot;&gt;Torn Jeans for Men&lt;/div&gt; &lt;div class=&quot;card-img&quot;&gt; &lt;img src=&quot;https://www.freepnglogos.com/uploads/jeans-png/jeans-mens-pants-cliparts-download-clip-art-37.png&quot; alt=&quot;&quot;&gt; &lt;/div&gt; &lt;div class=&quot;card-body pt-5&quot;&gt; &lt;div class=&quot;text-muted text-center mt-auto&quot;&gt;Available Colors&lt;/div&gt; &lt;div class=&quot;d-flex align-items-center justify-content-center colors my-2&quot;&gt; &lt;div class=&quot;btn-group&quot; data-toggle=&quot;buttons&quot; data-tooltip=&quot;tooltip&quot; data-placement=&quot;right&quot; title=&quot;choose color&quot;&gt; &lt;label class=&quot;btn btn-red form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-blue form-check-label active&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-green form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-orange form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-pink form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;d-flex align-items-center price&quot;&gt; &lt;div class=&quot;del mr-2&quot;&gt;&lt;span class=&quot;text-dark&quot;&gt;5500 uah&lt;/span&gt;&lt;/div&gt; &lt;div class=&quot;font-weight-bold&quot;&gt;4500 uah&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;col-lg-4 col-md-6 pt-md-0 pt-3&quot;&gt; &lt;div class=&quot;card d-flex flex-column align-items-center&quot;&gt; &lt;div class=&quot;product-name&quot;&gt;Nike Tshirts for Men&lt;/div&gt; &lt;div class=&quot;card-img&quot;&gt; &lt;img src=&quot;https://www.freepnglogos.com/uploads/t-shirt-png/t-shirt-png-printed-shirts-south-africa-20.png&quot; alt=&quot;&quot; height=&quot;100&quot; id=&quot;shirt&quot;&gt; &lt;/div&gt; &lt;div class=&quot;text-muted text-center mt-auto&quot;&gt;Available Sizes&lt;/div&gt; &lt;div id=&quot;avail-size&quot;&gt; &lt;div class=&quot;btn-group d-flex align-items-center flex-wrap&quot; data-toggle=&quot;buttons&quot;&gt; &lt;label class=&quot;btn btn-success form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot;&gt; 80 &lt;/label&gt; &lt;label class=&quot;btn btn-success form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; checked&gt; 92 &lt;/label&gt; &lt;label class=&quot;btn btn-success form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; checked&gt; 102 &lt;/label&gt; &lt;label class=&quot;btn btn-success form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; checked&gt; 104 &lt;/label&gt; &lt;label class=&quot;btn btn-success form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; checked&gt; 106 &lt;/label&gt; &lt;label class=&quot;btn btn-success form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;checkbox&quot; checked&gt; 108 &lt;/label&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;card-body pt-0&quot;&gt; &lt;div class=&quot;text-muted text-center mt-auto&quot;&gt;Available Colors&lt;/div&gt; &lt;div class=&quot;d-flex align-items-center justify-content-center colors my-2&quot;&gt; &lt;div class=&quot;btn-group&quot; data-toggle=&quot;buttons&quot; data-tooltip=&quot;tooltip&quot; data-placement=&quot;right&quot; title=&quot;choose color&quot;&gt; &lt;label class=&quot;btn btn-light border form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-blue form-check-label active&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-green form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-orange form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-pink form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;d-flex align-items-center price&quot;&gt; &lt;div class=&quot;del mr-2&quot;&gt;&lt;span class=&quot;text-dark&quot;&gt;5500 uah&lt;/span&gt;&lt;/div&gt; &lt;div class=&quot;font-weight-bold&quot;&gt;4500 uah&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;col-lg-4 col-md-6 pt-lg-0 pt-md-4 pt-3&quot;&gt; &lt;div class=&quot;card d-flex flex-column align-items-center&quot;&gt; &lt;div class=&quot;product-name text-center&quot;&gt;Casual Dress Belts For Men&lt;/div&gt; &lt;div class=&quot;card-img&quot;&gt; &lt;img src=&quot;https://www.freepnglogos.com/uploads/belts-png/casual-dress-belts-for-men-28.png&quot; alt=&quot;&quot;&gt; &lt;/div&gt; &lt;div class=&quot;card-body pt-5&quot;&gt; &lt;div class=&quot;text-muted text-center mt-auto&quot;&gt;Available Colors&lt;/div&gt; &lt;div class=&quot;d-flex align-items-center justify-content-center colors my-2&quot;&gt; &lt;div class=&quot;btn-group&quot; data-toggle=&quot;buttons&quot; data-tooltip=&quot;tooltip&quot; data-placement=&quot;right&quot; title=&quot;choose color&quot;&gt; &lt;label class=&quot;btn btn-dark border form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-brown form-check-label active&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;d-flex align-items-center justify-content-center price&quot;&gt; &lt;div class=&quot;font-weight-bold&quot;&gt;500 uah&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;col-lg-4 col-md-6 pt-md-4 pt-3&quot;&gt; &lt;div class=&quot;card d-flex flex-column align-items-center&quot;&gt; &lt;div class=&quot;product-name text-center&quot;&gt;Footwear For Women&lt;/div&gt; &lt;div class=&quot;card-img&quot;&gt; &lt;img src=&quot;https://www.freepnglogos.com/uploads/women-shoes-png/download-women-shoes-png-image-png-image-pngimg-2.png&quot; alt=&quot;&quot;&gt; &lt;/div&gt; &lt;div class=&quot;card-body pt-5&quot;&gt; &lt;div class=&quot;text-muted text-center mt-auto&quot;&gt;Available Colors&lt;/div&gt; &lt;div class=&quot;d-flex align-items-center justify-content-center colors my-2&quot;&gt; &lt;div class=&quot;btn-group&quot; data-toggle=&quot;buttons&quot; data-tooltip=&quot;tooltip&quot; data-placement=&quot;right&quot; title=&quot;choose color&quot;&gt; &lt;label class=&quot;btn btn-dark border form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-brown form-check-label active&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-pink form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-red form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;d-flex align-items-center justify-content-center price&quot;&gt; &lt;div class=&quot;font-weight-bold&quot;&gt;1500 uah&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;col-lg-4 col-md-6 pt-md-4 pt-3&quot;&gt; &lt;div class=&quot;card d-flex flex-column align-items-center&quot;&gt; &lt;div class=&quot;product-name text-center&quot;&gt;Nike Jogging shoes For Men&lt;/div&gt; &lt;div class=&quot;card-img&quot;&gt; &lt;img src=&quot;https://www.freepnglogos.com/uploads/shoes-png/find-your-perfect-running-shoes-26.png&quot; alt=&quot;&quot;&gt; &lt;/div&gt; &lt;div class=&quot;card-body pt-5&quot;&gt; &lt;div class=&quot;text-muted text-center mt-auto&quot;&gt;Available Colors&lt;/div&gt; &lt;div class=&quot;d-flex align-items-center justify-content-center colors my-2&quot;&gt; &lt;div class=&quot;btn-group&quot; data-toggle=&quot;buttons&quot; data-tooltip=&quot;tooltip&quot; data-placement=&quot;right&quot; title=&quot;choose color&quot;&gt; &lt;label class=&quot;btn btn-dark border form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-pink form-check-label active&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-blue form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-orange form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;d-flex align-items-center justify-content-center price&quot;&gt; &lt;div class=&quot;font-weight-bold&quot;&gt;1200 uah&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;col-lg-4 col-md-6 pt-md-4 pt-3&quot;&gt; &lt;div class=&quot;card d-flex flex-column align-items-center&quot;&gt; &lt;div class=&quot;product-name text-center&quot;&gt;Leather Wallets For Men&lt;/div&gt; &lt;div class=&quot;card-img&quot;&gt; &lt;img src=&quot;https://www.freepnglogos.com/uploads/money-png/money-wallet-dollar-image-money-pictures-download-27.png&quot; alt=&quot;&quot;&gt; &lt;/div&gt; &lt;div class=&quot;card-body pt-5&quot;&gt; &lt;div class=&quot;text-muted text-center mt-auto&quot;&gt;Available Colors&lt;/div&gt; &lt;div class=&quot;d-flex align-items-center justify-content-center colors my-2&quot;&gt; &lt;div class=&quot;btn-group&quot; data-toggle=&quot;buttons&quot; data-tooltip=&quot;tooltip&quot; data-placement=&quot;right&quot; title=&quot;choose color&quot;&gt; &lt;label class=&quot;btn btn-dark border form-check-label&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;label class=&quot;btn btn-brown form-check-label active&quot;&gt; &lt;input class=&quot;form-check-input&quot; type=&quot;radio&quot; autocomplete=&quot;off&quot;&gt; &lt;/label&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;d-flex align-items-center justify-content-center price&quot;&gt; &lt;div class=&quot;font-weight-bold&quot;&gt;900 uah&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt;" id="htmleditorvalue" />
+<input type="hidden" value="@import url('https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap');*{padding: 0;margin: 0;box-sizing: border-box;font-family: 'Poppins', sans-serif}body{background-color: #f4f4f4}.container{margin: 40px auto}#header{width: 100%;height: 60px;box-shadow: 5px 5px 15px #e8e8e8}.col-lg-4, .col-md-6{padding-right: 0}button.btn.btn-hide{height: inherit;background-color: #ff935d;color: #fff;font-size: 0.82rem;padding-left: 40px;padding-right: 40px;border-top-right-radius: 0px;border-bottom-right-radius: 0px}.btn:focus{box-shadow: none}.box-label .btn{background-color: #fff;padding: 0;font-size: 0.8rem}.btn-red{background-color: #e00000ce}.btn-orange{background-color: #ffa500}.btn-pink{background-color: #e0009dce}.btn-green{background-color: #00811c}.btn-blue{background-color: #026bc2}.btn-brown{background-color: #994a00}.navbar{display: inline-flex}.pagination .page-item .page-link{color: #333;border: none;width: 40px;text-align: center}.pagination .page-item.active .page-link{background-color: #fff;border: 1px solid #333}select{outline: none;padding: 6px 12px;margin: 0px 4px;color: #999;font-size: 0.85rem;width: 140px}#select2{border: 1px solid #777;color: #999}#pro{border: none;color: #333;font-weight: 700;padding-left: 0px;width: initial}#filterbar{width: 30%;background-color: #fff;border: 1px solid #ddd;border-radius: 15px;float: left}#filterbar input[type=&quot;radio&quot;]{visibility: hidden}#filterbar input[type='radio']:checked{background-color: #16c79a;border: none}#filterbar .btn.btn-success{background-color: #ddd;color: #333;border: none;width: 115px}#filterbar .btn.btn-success:hover{background-color: #aff1e1;color: #444}#filterbar .btn-success:not(:disabled):not(.disabled).active, #filterbar .btn-success:not(:disabled):not(.disabled):active{background-color: #16c79a;color: #fff}label{cursor: pointer}.tick{display: block;position: relative;padding-left: 23px;cursor: pointer;font-size: 0.9rem;margin: 0}.tick input{position: absolute;opacity: 0;cursor: pointer;height: 0;width: 0}.check{position: absolute;top: 1px;left: 0;height: 18px;width: 18px;background-color: #fff;border: 1px solid #ddd;border-radius: 3px}.tick:hover input~.check{background-color: #f3f3f3}.tick input:checked~.check{background-color: #ffffff}.check:after{content: &quot;&quot;;position: absolute;display: none}.tick input:checked~.check:after{display: block;transform: rotate(45deg) scale(1)}.tick .check:after{left: 6px;top: 2px;width: 5px;height: 10px;border: solid rgb(0, 0, 0);border-width: 0 3px 3px 0;transform: rotate(45deg) scale(2)}.box{padding: 10px}.box-label{color: #11698e;font-size: 0.9rem;font-weight: 800}#inner-box, #inner-box2{height: 150px;overflow-y: scroll}#inner-box2{height: 132px}#inner-box::-webkit-scrollbar, #inner-box2::-webkit-scrollbar{width: 6px}#inner-box::-webkit-scrollbar-track, #inner-box2::-webkit-scrollbar-track{background-color: #ddd;border-radius: 2px}#inner-box::-webkit-scrollbar-thumb, #inner-box2::-webkit-scrollbar-thumb{background-color: #333;border-radius: 2px}#price{height: 45px}#size input[type=&quot;checkbox&quot;]{visibility: hidden}#size input[type='checkbox']:checked{background-color: #16c79a;border: none}#size .btn.btn-success{background-color: #ddd;color: #333;border: none;width: 40px;font-size: 0.8rem;border-radius: 0}#size .btn.btn-success:hover{background-color: #aff1e1;color: #444}#size .btn-success:not(:disabled):not(.disabled).active, #size .btn-success:not(:disabled):not(.disabled):active{background-color: #16c79a;color: #fff}#size label{margin: 10px;margin-left: 0px}.card{padding: 10px;cursor: pointer;transition: .3s all ease-in-out;height: 350px}.card:hover{box-shadow: 2px 2px 15px #fd9a6ce5;transform: scale(1.02)}.card .product-name{font-weight: 600}.card-body{padding-bottom: 0}.card .text-muted{font-size: 0.82rem}.card-img img{padding-top: 10px;width: inherit;height: 180px;object-fit: contain;display: block}.card-body .btn-group .btn{padding: 0;width: 20px;height: 20px;margin-right: 5px;border-radius: 50%;position: relative}.card-body .btn-group&gt;.btn-group:not(:last-child)&gt;.btn, .card-body .btn-group&gt;.btn:not(:last-child):not(.dropdown-toggle){border-radius: 50%;transition: ease-in all .4s}.card-body input[type=&quot;radio&quot;]{visibility: hidden}.card-body .btn:not(:disabled):not(.disabled).active::after, .card-body .btn:not(:disabled):not(.disabled):active::after{content: &quot;&quot;;width: 10px;height: 10px;border-radius: 50%;top: 4px;left: 4.2px;background-color: #fff;position: absolute;transition: ease-in all .4s}.card-body .btn.btn-light:not(:disabled):not(.disabled).active::after, .card-body .btn.btn-light:not(:disabled):not(.disabled):active::after{background-color: #000}#avail-size input[type=&quot;checkbox&quot;]{visibility: hidden}#avail-size input[type='checkbox']:checked{background-color: #16c79a;border: none}#avail-size .btn.btn-success{background-color: #ddd;color: #333;border: none;width: 20px;font-size: 0.7rem;border-radius: 0;padding: 0}#avail-size .btn.btn-success:hover{background-color: #aff1e1;color: #444}#avail-size .btn-success:not(:disabled):not(.disabled).active, #avail-size .btn-success:not(:disabled):not(.disabled):active{background-color: #16c79a;color: #fff}#avail-size label{margin: 10px;margin-left: 0px}#shirt{height: 170px}.middle{position: relative;width: 100%;margin-top: 25px}.slider{position: relative;z-index: 1;height: 5px;margin: 0 15px}.slider&gt;.track{position: absolute;z-index: 1;left: 0;right: 0;top: 0;bottom: 0;border-radius: 5px;background-color: #ddd}.slider&gt;.range{position: absolute;z-index: 2;left: 25%;right: 25%;top: 0;bottom: 0;border-radius: 5px;background-color: #36a31b}.slider&gt;.thumb{position: absolute;top: 2px;z-index: 3;width: 20px;height: 20px;background-color: #36a31b;border-radius: 50%;box-shadow: 0 0 0 0 rgba(63, 204, 75, 0.705);transition: box-shadow .3s ease-in-out}.slider&gt;.thumb::after{position: absolute;width: 8px;height: 8px;left: 28%;top: 30%;border-radius: 50%;content: '';background-color: #fff}.slider&gt;.thumb.left{left: 25%;transform: translate(-15px, -10px)}.slider&gt;.thumb.right{right: 25%;transform: translate(15px, -10px)}.slider&gt;.thumb.hover{box-shadow: 0 0 0 10px rgba(125, 230, 134, 0.507)}.slider&gt;.thumb.active{box-shadow: 0 0 0 10px rgba(63, 204, 75, 0.623)}input[type=range]{position: absolute;pointer-events: none;-webkit-appearance: none;z-index: 2;height: 10px;width: 100%;opacity: 0}input[type=range]::-webkit-slider-thumb{pointer-events: all;width: 30px;height: 30px;border-radius: 0;border: 0 none;background-color: red;-webkit-appearance: none}.del{text-decoration: line-through;color: red}@media(min-width:1199.6px){#filterbar{width: 25%}}@media(max-width:1199.5px){#filterbar{width: 28%}.card{height: 350px}.price{font-size: 0.9rem}.product-name{font-size: 0.8rem}}@media(max-width: 991.5px){.navbar-nav{min-width: 290px;position: absolute;left: -168px;bottom: -146px;padding: 20px 10px;display: block;background-image: none;z-index: 2;background-color: #1d1c1cb2}#filterbar{width: 36%}#sort{background-color: inherit;color: #fff;margin: 0;margin-bottom: 20px;width: 100%}#sort option, #pro option{color: #000}#pro, #select2, .result{background-color: inherit;color: #fff}.card{height: 345px}.price{font-size: 0.85rem}}@media(max-width: 767.5px){#filterbar{width: 50%}}@media(max-width: 525.5px){#filterbar{float: none;width: 100%;margin-bottom: 20px;border-radius: 5px}#content.my-5{margin-top: 20px !important;margin-bottom: 20px !important}.col-lg-4, .col-md-6{padding-left: 0}}@media(max-width: 500.5px){.pagination{display: none}}" id="csseditorvalue" />
+<input type="hidden" value="// For Filters
+document.addEventListener(&quot;DOMContentLoaded&quot;, function() {
+var filterBtn = document.getElementById('filter-btn');
+var btnTxt = document.getElementById('btn-txt');
+var filterAngle = document.getElementById('filter-angle');
+
+$('#filterbar').collapse(false);
+var count = 0, count2 = 0;
+function changeBtnTxt() {
+$('#filterbar').collapse(true);
+count++;
+if (count % 2 != 0) {
+filterAngle.classList.add(&quot;fa-angle-right&quot;);
+btnTxt.innerText = &quot;show filters&quot;
+filterBtn.style.backgroundColor = &quot;#36a31b&quot;;
+}
+else {
+filterAngle.classList.remove(&quot;fa-angle-right&quot;)
+btnTxt.innerText = &quot;hide filters&quot;
+filterBtn.style.backgroundColor = &quot;#ff935d&quot;;
+}
+
+}
+
+// For Applying Filters
+$('#inner-box').collapse(false);
+$('#inner-box2').collapse(false);
+
+// For changing NavBar-Toggler-Icon
+var icon = document.getElementById('icon');
+
+function chnageIcon() {
+count2++;
+if (count2 % 2 != 0) {
+icon.innerText = &quot;&quot;;
+icon.innerHTML = '&lt;span class=&quot;far fa-times-circle&quot; style=&quot;width:100%&quot;&gt;&lt;/span&gt;';
+icon.style.paddingTop = &quot;5px&quot;;
+icon.style.paddingBottom = &quot;5px&quot;;
+icon.style.fontSize = &quot;1.8rem&quot;;
+
+
+}
+else {
+icon.innerText = &quot;&quot;;
+icon.innerHTML = '&lt;span class=&quot;navbar-toggler-icon&quot;&gt;&lt;/span&gt;';
+icon.style.paddingTop = &quot;5px&quot;;
+icon.style.paddingBottom = &quot;5px&quot;;
+icon.style.fontSize = &quot;1.2rem&quot;;
+}
+}
+
+// Showing tooltip for AVAILABLE COLORS
+$(function () {
+$('[data-tooltip=&quot;tooltip&quot;]').tooltip()
+})
+
+// For Range Sliders
+var inputLeft = document.getElementById(&quot;input-left&quot;);
+var inputRight = document.getElementById(&quot;input-right&quot;);
+
+var thumbLeft = document.querySelector(&quot;.slider &gt; .thumb.left&quot;);
+var thumbRight = document.querySelector(&quot;.slider &gt; .thumb.right&quot;);
+var range = document.querySelector(&quot;.slider &gt; .range&quot;);
+
+var amountLeft = document.getElementById('amount-left')
+var amountRight = document.getElementById('amount-right')
+
+function setLeftValue() {
+var _this = inputLeft,
+min = parseInt(_this.min),
+max = parseInt(_this.max);
+
+_this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
+
+var percent = ((_this.value - min) / (max - min)) * 100;
+
+thumbLeft.style.left = percent + &quot;%&quot;;
+range.style.left = percent + &quot;%&quot;;
+amountLeft.innerText = parseInt(percent * 100);
+}
+setLeftValue();
+
+function setRightValue() {
+var _this = inputRight,
+min = parseInt(_this.min),
+max = parseInt(_this.max);
+
+_this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
+
+var percent = ((_this.value - min) / (max - min)) * 100;
+
+amountRight.innerText = parseInt(percent * 100);
+thumbRight.style.right = (100 - percent) + &quot;%&quot;;
+range.style.right = (100 - percent) + &quot;%&quot;;
+}
+setRightValue();
+
+inputLeft.addEventListener(&quot;input&quot;, setLeftValue);
+inputRight.addEventListener(&quot;input&quot;, setRightValue);
+
+inputLeft.addEventListener(&quot;mouseover&quot;, function () {
+thumbLeft.classList.add(&quot;hover&quot;);
+});
+inputLeft.addEventListener(&quot;mouseout&quot;, function () {
+thumbLeft.classList.remove(&quot;hover&quot;);
+});
+inputLeft.addEventListener(&quot;mousedown&quot;, function () {
+thumbLeft.classList.add(&quot;active&quot;);
+});
+inputLeft.addEventListener(&quot;mouseup&quot;, function () {
+thumbLeft.classList.remove(&quot;active&quot;);
+});
+
+inputRight.addEventListener(&quot;mouseover&quot;, function () {
+thumbRight.classList.add(&quot;hover&quot;);
+});
+inputRight.addEventListener(&quot;mouseout&quot;, function () {
+thumbRight.classList.remove(&quot;hover&quot;);
+});
+inputRight.addEventListener(&quot;mousedown&quot;, function () {
+thumbRight.classList.add(&quot;active&quot;);
+});
+inputRight.addEventListener(&quot;mouseup&quot;, function () {
+thumbRight.classList.remove(&quot;active&quot;);
+});
+});" id="jseditorvalue" />
+<input type="hidden" value="1595" id="snippets_id" />
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.3.3/ace.js" type="5ccf1a6ae2abfd3c16f67624-text/javascript" charset="utf-8"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ext-beautify.js" type="5ccf1a6ae2abfd3c16f67624-text/javascript" charset="utf-8"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify.js" type="5ccf1a6ae2abfd3c16f67624-text/javascript"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify-css.js" type="5ccf1a6ae2abfd3c16f67624-text/javascript"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/js-beautify/1.9.1/beautify-html.js" type="5ccf1a6ae2abfd3c16f67624-text/javascript"></script>
+
+<script type="5ccf1a6ae2abfd3c16f67624-text/javascript">
+    $(document).ready(function(){
+     
+    var bsversion = '4.0.0';
+    var bootstrap_js_link ='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js';
+    var bootstrap_css_link = 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css';
+    var jsversion = 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js';
+    var font_css_link = 'https://use.fontawesome.com/releases/v5.7.2/css/all.css';
+    var js_required =  '1';
+    
+    htmlString = $('#htmleditorvalue').val();
+    cssString = $('#csseditorvalue').val();
+    jsString = $('#jseditorvalue').val(); 
+    
+    css_code = css_beautify(cssString);
+    html_code = html_beautify(htmlString);
+    js_code = html_beautify(jsString);
+    
+    var htmleditor = ace.edit("htmlEditor");
+    var csseditor = ace.edit("cssEditor");
+    var jseditor = ace.edit("jsEditor");
+    
+    function setEditorOptions(snippets, editor, type) {
+    
+        editor.setTheme("ace/theme/monokai");
+        editor.session.setMode("ace/mode/" + type);
+        editor.session.setValue(snippets);
+    };
+    
+    setEditorOptions(html_code, htmleditor, 'html');
+    setEditorOptions(css_code, csseditor, 'css');
+    setEditorOptions(js_code, jseditor, 'javascript');
+    
+    
+    var html = buildSource(htmleditor, jseditor, csseditor);
+    $(function() {
+        var iframe = document.createElement('iframe');
+        iframe.src = 'about:blank';
+        iframe.id='snippet-iframe';
+        iframe.frameBorder = "0";
+        iframe.height = 574;
+        iframe.loading="lazy";
+        iframe.css = 'width:100%;';
+        iframe.className = 'preview-iframe';
+          $('.preview-iframe').remove();
+          $('#preview-container').empty();
+          $('div#preview-container').append(iframe);   
+          iframe.contentWindow.document.open('text/html', 'replace');
+          iframe.contentWindow.document.write(html);
+          iframe.contentWindow.document.close();
+          $('#loader').remove();
+          $('#content1').removeClass('content-middle');
+          $('#preview-container').removeClass('preview-container-back');
+         $("#snippet-iframe").contents().find("img").attr("loading",'lazy');
+    });
+    
+
+    function buildSource(htmleditor, jseditor, csseditor) {
+        var code = {};
+        code.html = htmleditor.getValue();
+        code.css = csseditor.getValue();
+        code.js = jseditor.getValue();
+        code.font_css_link = font_css_link;
+        if(bsversion){
+           code.bootstrapcss = bootstrap_css_link;
+           code.bootstrapjs = bootstrap_js_link;
+        }
+
+        if(js_required==1){
+            code.jqueryurl = jsversion;
+        } 
+            
+        var template = "<!doctype html>\n\
+                        <html>\n\
+                            <head>\n\
+                                <meta charset='utf-8'>\n\
+                                <meta name='viewport' content='width=device-width, initial-scale=1'>\n\
+                                <title>Snippet - BBBootstrap</title>\n\
+                                <link href='|bootstrapcss|' rel='stylesheet'>\n\
+                                <link href='|font_css_link|' rel='stylesheet'>\n\
+                                \x3Cscript type='text/javascript' src='|jqueryurl|'>\x3C/script>\n\
+                                <style>|css|\x3C/style>\n\
+                                </head>\n\
+                                <body oncontextmenu='return false' class='snippet-body'>\n\
+                                |html|\n\
+                                \x3Cscript type='text/javascript' src='|bootstrapjs|'>\x3C/script>\n\
+                                \x3Cscript type='text/javascript'>|js|\x3C/script>\n\
+                                </body>\n\
+                            </html>";
+    
+        content = template.replace(/\|(\w+)\|/g, function(match, str) {
+            if (str in code) return code[str];
+            return '';
+        });
+       
+        
+        return content;
+    }
+    
+    
+    function downloadInnerHtml(filename,content,elId, mimeType) {
+    var elHtml = content;
+    var link = document.createElement('a');
+    mimeType = mimeType || 'text/plain';
+    
+    link.setAttribute('download', filename);
+    link.setAttribute('href', 'data:' + mimeType  +  ';charset=utf-8,' + encodeURIComponent(elHtml));
+    link.click(); 
+     
+    }
+    
+    
+    $("#hitdownload").click(function(event) {
+        event.preventDefault();
+        var snippet_id = $("#snippets_id").val();
+        var token = 'qhHZC4uVlXGzseIRte9U9F5NC8oFEskWEEfx07Ni';
+        $.ajax({
+            url: '/snippets/downloadsnippet',
+            type: 'POST',
+            data: {
+                snippet_id: snippet_id,
+                '_token': token
+            },
+            beforeSend: function(msg){
+    
+           $("#hitdownload").css("pointer-events","none");
+           $("#hitdownload").css("cursor","default");
+           $("#hitdownload i").addClass('bounce');
+    
+            },
+            success: function(result) { 
+                downloadInnerHtml('bbbootstrap-snippet.html',html,'main','text/html');
+                $("#hitdownload i").removeClass('bounce');
+                $("#hitdownload").css("pointer-events","");
+                $("#hitdownload").css("cursor","");
+              
+               $('.modal_download_thanks').fadeIn();
+            
+            }
+        });
+    });
+    
+    
+    
+    
+    
+    $("#verifytodownload").click(function(event) {
+        event.preventDefault();
+        $(".vh").fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+    });
+    
+    
+    $("#verifytolike").click(function(event) {
+        event.preventDefault();
+        $(".vh").fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+    });
+    
+    
+    $("#verifytocomment").click(function(event) {
+        event.preventDefault();
+        $(".vh").fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+    });
+    
+    $("#hitlike").click(function(event) {
+        event.preventDefault();
+        var snippet_id = $("#snippets_id").val();
+       
+        var token = 'qhHZC4uVlXGzseIRte9U9F5NC8oFEskWEEfx07Ni';
+        $.ajax({
+            url: '/snippets/saveslikes',
+            type: 'POST',
+            data: {
+                snippet_id: snippet_id,
+                '_token': token,
+         
+            },
+            success: function(result) {
+    
+                $("#total_like").html(result);
+            }
+        });
+    });
+    
+    $("#addcomments").click(function(event) {
+        event.preventDefault();
+    
+        var snippet_id = $("#snippets_id").val();
+        var commenttext = $("#commenttext").val();
+        var token = 'qhHZC4uVlXGzseIRte9U9F5NC8oFEskWEEfx07Ni';
+        $('textarea.mention').mentionsInput('val', function(text) {
+      var post_text = text;
+    
+      var cmnt= post_text.replace(/\s+/g, '');
+        var commentlength=cmnt.length;
+    
+      if(commentlength<=15)
+      {
+           $('.count').css('opacity','0');
+           $('.count').css('color','red');
+    
+            setInterval(function(){
+    
+                $('.count').css('opacity','1');
+    
+            }, 1000);
+    
+      } else {
+      	$.ajax({
+            type: "POST",
+            data: {
+                snippet_id: snippet_id,
+                comment_text: post_text,
+                '_token': token
+    
+            },
+            url: '/snippets/addcomments',
+            beforeSend: function () {
+            $("#addcomments").attr("disabled", true);
+            $('#addcomments').html("Please wait...");
+        },
+        error: function (error) {
+        console.log(error);
+        },
+            success: function(result) {
+    
+                var obj = JSON.parse(result);
+                    var user_name  = obj.user_name;
+                    var user_picture  = obj.user_picture;
+                    var comment_text  = obj.comment_text;
+                    var datepublished  = obj.datepublished;
+                    $('#addcomments').attr("disabled", false);
+                    $('#addcomments').html("Submit comment");
+                    $("#commenttext").val(" ");
+                    $(".no_snippets").remove();
+                    $("#all-comment-section").prepend('<div class="reviews-comments-item"><div class="review-comments-avatar"><img class="lazy" src="/assets/images/bg/loading-image.jpg" data-src="'+user_picture+'" alt=""></div><div class="reviews-comments-item-text"><a href="#" class="new-dashboard-comment-item"> <i class="fa fa-calendar-check-o"></i> Just now</a><h4><a href="#">'+user_name+'</a></h4><div class="clearfix"></div><p class="comment-text">'+comment_text+'</p></div></div>');
+          
+            }
+      });
+      }
+    
+    });
+    
+    
+    
+    
+    });
+    
+    
+    $("#commenttext").keyup(function () {
+    
+      var length = $('#commenttext').val().length;
+    var charactersLeft = 15 - length;
+    var count = $('.count');
+    if (length<15) {
+    
+      count.text(charactersLeft+" more to go");
+    
+    } else{
+        count.text(" ");
+    }
+    
+    });
+    
+    
+    
+    
+    $("#followme").click(function(event) {
+    
+    
+    event.preventDefault();
+    var token = $("#csrf-token").val();
+    var receiver_id = $("#receiver_id").val();
+    $.ajax({
+    
+    url: '/users/followme',
+    type: 'POST',
+    data: {
+        'receiver_id': receiver_id,
+        '_token': token,
+     
+    },
+    error: function (error) {
+     console.log(error);
+     },
+    success: function(result) {
+     
+       $("#followme").html(result);
+    
+    }
+    });
+    });
+    
+    
+    });
+</script>
+
+
+<script type="5ccf1a6ae2abfd3c16f67624-text/javascript">
+
+    function clip(clip_id){
+        
+     var clipboard = new ClipboardJS('#'+clip_id);
+     clipboard.on('success', function(e) {
+         
+       e.trigger.setAttribute("aria-label",'Copied');
+    
+             setTimeout(function(){
+                
+                 $(".icn-badge").removeAttr("aria-label");
+             
+     }, 3000);
+    });
+    
+    }
+    
+    $(document).ready(function(){
+    
+    var token = $("#csrf-token").val();
+    var snippet_id = $("#snippets_id").val();
+    
+    $('textarea.mention').mentionsInput({
+     onDataRequest:function (mode, query, callback) {
+    
+     $.ajax({
+         url: '/snippets/getcommentedusers',
+         type: "POST",
+         dataType: "json",
+         data: {'_token': token,'snippet_id':snippet_id},
+         error: function (error) {
+         console.log(error);
+         },
+         success: function(data){
+    
+           data = _.filter(data, function(item) { return item.name.toLowerCase().indexOf(query.toLowerCase()) > -1 });
+    
+           callback.call(this, data);
+    
+         }
+     });
+      
+    }
+    });
+    });
+     
+</script>
+
+<style type="text/css">
+    .feedback {
+     background-color: #6645ea;
+    color: white;
+    padding: 9px 16px;
+    border-radius: 4px;
+    border-color: #6645ea91;
+    font-size: 14px !important;
+    cursor: pointer;
+    margin-bottom: 16px;
+}
+
+.feedback:hover{
+    background-color:red;
+    border-color: red;
+}
+
+.vh {
+    box-shadow: 0 1px 3px 0 rgba(60,64,67,0.302), 0 4px 8px 3px rgba(60,64,67,0.149);
+    -webkit-font-smoothing: antialiased;
+    font-family: Roboto,RobotoDraft,Helvetica,Arial,sans-serif;
+    font-size: .875rem;
+    letter-spacing: .2px;
+    -webkit-align-items: center;
+    align-items: center;
+    background-color: #202124;
+    border: none;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    bottom: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    font-weight: 400;
+    left: 0;
+    margin: 24px;
+    max-width: 366px;
+    min-height: 52px;
+    padding: 8px 12px;
+    padding-right: 18px;
+    position: fixed;
+    right: auto;
+    z-index: 116;
+    text-align: left;
+    top: auto;
+    white-space: normal;
+}
+
+.resend-link{
+    background-color: #575757;
+    padding: 8px;
+    border-radius: 7px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.resend-link:hover{
+        background-color: #575757c9;
+}
+
+.to-top {
+    bottom: 31px !important;
+    right: 13px !important;
+    }
+</style>
+
+
+                      
+                                        
+               
+                    <section class="gradient-bg contribute">
+                     
+                        <div class="container-fluid">
+                            <div class="join-wrap fl-wrap">
+                                <div class="row">
+                                    <div class="col-md-8">
+                                        <h3>Join BBBootstrap community</h3>
+                                        <p>Contribute an awesome snippet to help other developer and designers</p>
+                                    </div>
+                                    <div class="col-md-4"><a href="/register" class="join-wrap-btn" style="float: right;">Sign Up <i class="fa fa-sign-in"></i></a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    
+            
+
+<footer class="main-footer dark-footer">
+                
+                <div class="sub-footer fl-wrap">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="about-widget">
+                                    <img src="https://bbbootstrap.com/assets/images/logo4.png" alt="BBBootstrap Logo">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="copyright"> &#169; BBBOOTSTRAP 2021 .  All rights reserved.</div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="footer-social">
+                                    <ul>
+                                        <li><a target="_blank" href="//www.dmca.com/Protection/Status.aspx?ID=6703c7ae-cb67-4585-97a4-c595459349e9" title="DMCA.com Protection Status" class="dmca-badge"> <img src ="https://images.dmca.com/Badges/dmca_protected_sml_120l.png?ID=6703c7ae-cb67-4585-97a4-c595459349e9"  alt="DMCA.com Protection Status" /></a>  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js" type="5ccf1a6ae2abfd3c16f67624-text/javascript"> </script></li>
+                                        <li><a href="/privacy-policy" target="_blank">Privacy policy</a></li>
+                                        <li><a href="https://www.facebook.com/bbbootstrap" rel="noreferrer" target="_blank"><i class="fa fa-facebook-official"></i></a></li>
+                                        <li><a href="https://twitter.com/bbbootstrap" rel="noreferrer" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="https://www.instagram.com/bbbootstrap_" rel="noreferrer" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+            
+            
+
+            <style>
+    .cookie-consent {
+        position: fixed;
+    bottom: 8px;
+    right: 15px;
+    width: 226px;
+    padding-top: 7px;
+    height: 70px;
+    color: #fff;
+    line-height: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 14px;
+    background: #292929;
+    z-index: 120;
+    cursor: pointer;
+    border-radius: 3px;
+   }
+
+   .cookie-consent span{
+       font-size: 12px;
+   }
+
+   .cookie-consent a{
+    padding: 2px 9px;
+   }
+
+   .agree-button{
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #fff;
+    border: 1px solid #fff;
+    border-radius: 2px;
+    font-size: 11px;
+    height: 18px;
+    cursor: pointer;
+   }
+
+   .margin-top-3{
+    margin-top: 3px;
+   }
+
+   @media (max-width:972px){
+     
+    .cookie-consent{
+        display: none !important;
+    }
+
+   }
+</style>
+
+<div class="cookie-consent js-cookie-consent cookie-consent" style="display: inline;">
+    <span>Build, learn and share HTML,CSS & Javascript with our online code editor!</span>
+    <div class="margin-top-3">
+         <a target="_blank" class="js-cookie-consent-agree cookie-consent__agree agree-button" href="/tools/proonlineeditor">Try Now</a>
+         <button class="js-cookie-consent-agree cookie-consent__agree agree-button">
+            No Thanks
+         </button>
+    </div>
+</div>
+
+    <script type="5ccf1a6ae2abfd3c16f67624-text/javascript">
+
+        window.laravelCookieConsent = (function () {
+
+            const COOKIE_VALUE = 1;
+            const COOKIE_DOMAIN = 'bbbootstrap.com';
+
+            function consentWithCookies() {
+                setCookie('laravel_cookie_consent', COOKIE_VALUE, 7300);
+                hideCookieDialog();
+            }
+
+            function cookieExists(name) {
+                return (document.cookie.split('; ').indexOf(name + '=' + COOKIE_VALUE) !== -1);
+            }
+
+            function hideCookieDialog() {
+                const dialogs = document.getElementsByClassName('js-cookie-consent');
+
+                for (let i = 0; i < dialogs.length; ++i) {
+                    dialogs[i].style.display = 'none';
+                }
+            }
+
+            function setCookie(name, value, expirationInDays) {
+                const date = new Date();
+                date.setTime(date.getTime() + (expirationInDays * 24 * 60 * 60 * 1000));
+                document.cookie = name + '=' + value
+                    + ';expires=' + date.toUTCString()
+                    + ';domain=' + COOKIE_DOMAIN
+                    + ';path=/'
+                    + '';
+            }
+
+            if (cookieExists('laravel_cookie_consent')) {
+                hideCookieDialog();
+            }
+
+            const buttons = document.getElementsByClassName('js-cookie-consent-agree');
+
+            for (let i = 0; i < buttons.length; ++i) {
+                buttons[i].addEventListener('click', consentWithCookies);
+            }
+
+            return {
+                consentWithCookies: consentWithCookies,
+                hideCookieDialog: hideCookieDialog
+            };
+        })();
+    </script>
+
+ 
+
+                
+        </div>
+
+     
+     <script defer type="5ccf1a6ae2abfd3c16f67624-text/javascript" src="https://bbbootstrap.com/assets/js/pluginss.js?v=16"></script>
+     <script type="5ccf1a6ae2abfd3c16f67624-text/javascript" src="https://bbbootstrap.com/assets/js/scripts.js?v=9.4"></script>
+     <script defer src='https://cdn.rawgit.com/jashkenas/underscore/1.8.3/underscore-min.js' type="5ccf1a6ae2abfd3c16f67624-text/javascript"></script>
+     <script defer type="5ccf1a6ae2abfd3c16f67624-text/javascript" src="https://bbbootstrap.com/assets/js/jquery.elastic.js"></script>
+     <script defer type="5ccf1a6ae2abfd3c16f67624-text/javascript" src="https://bbbootstrap.com/assets/js/jquery.mentionsInput.js"></script>
+    
+    <script type="5ccf1a6ae2abfd3c16f67624-text/javascript">
+        
+        window.onload = function(){
+            function loadjscssfile(filename, filetype) {
+                if(filetype == "js") {
+                    var cssNode = document.createElement('script');
+                    cssNode.setAttribute("type", "text/javascript");
+                    cssNode.setAttribute("src", filename);
+                } else if(filetype == "css") {
+                    var cssNode = document.createElement("link");
+                    cssNode.setAttribute("rel", "stylesheet");
+                    cssNode.setAttribute("type", "text/css");
+                    cssNode.setAttribute("href", filename);
+                }
+                if(typeof cssNode != "undefined")
+                    document.getElementsByTagName("head")[0].appendChild(cssNode);
+            }
+            loadjscssfile('https://bbbootstrap.com/assets/js/lazy-load.js', "js");
+           
+        };
+       
+    </script>
+     <script type="5ccf1a6ae2abfd3c16f67624-text/javascript">
+
+     $("#resend-link").click(function(event) {
+     event.preventDefault();
+     var user_id = $("#user_id").val();
+     var token = 'qhHZC4uVlXGzseIRte9U9F5NC8oFEskWEEfx07Ni';
+     $.ajax({
+      url: '/users/sendemailverification',
+      type: 'POST',
+      data: {
+        'user_id': user_id,
+        '_token': token
+      },
+      beforeSend: function(){
+        $(".resend-link").text("Sending...");
+        $( "span#resend-link" ).off("click");
+        },
+      success: function(result) { 
+        $( "span#resend-link" ).off("click");
+         $(".resend-link").text(result);
+         
+      }
+  });
+});
+
+
+    $("#add-snippet").click(function(event) {
+        event.preventDefault();
+        $(".vh").fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+    });
+    
+    $('.blog-collection img').attr("loading", "lazy");
+    $('.blog-collection iframe').attr("loading", "lazy");
+</script>
+
+<script type="5ccf1a6ae2abfd3c16f67624-text/javascript">
+    function copy(text, target) {
+    setTimeout(function() {
+        $('#copied_tip').remove();
+    }, 800);
+    //$(target).parent('.place').append("<div class='tip' id='copied_tip'>Copied!</div>");
+    $(target).append("<div class='tip' id='copied_tip'>Copied!</div>");
+    var input = document.createElement('input');
+    input.setAttribute('value', text);
+    document.body.appendChild(input);
+    input.select();
+    var result = document.execCommand('copy');
+    document.body.removeChild(input)
+    return result;
+}
+</script>
+
+
+            <script type="5ccf1a6ae2abfd3c16f67624-text/javascript">
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    
+    document.onkeydown = function (e) {
+    if (event.keyCode == 123) {
+        return false;
+    }    
+    
+    if (e.ctrlKey && e.shiftKey && (e.keyCode == 'I'.charCodeAt(0) || e.keyCode == 'i'.charCodeAt(0))) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && (e.keyCode == 'C'.charCodeAt(0) || e.keyCode == 'c'.charCodeAt(0))) {
+        return false;
+    }
+    if (e.ctrlKey && e.shiftKey && (e.keyCode == 'J'.charCodeAt(0) || e.keyCode == 'j'.charCodeAt(0))) {
+        return false;
+    }
+    if (e.ctrlKey && (e.keyCode == 'U'.charCodeAt(0) || e.keyCode == 'u'.charCodeAt(0))) {
+        return false;
+    }
+    if (e.ctrlKey && (e.keyCode == 'S'.charCodeAt(0) || e.keyCode == 's'.charCodeAt(0))) {
+        return false;
+    }
+ } 
+
+</script>
+                                                   
+
+        <script type="5ccf1a6ae2abfd3c16f67624-text/javascript"> 
+            $(".tab_container label").on('click', function(e) {
+                ga('send','event','Tabs clicked','Tabs clicked');
+            });  
+        </script> 
+    <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js" data-cf-settings="5ccf1a6ae2abfd3c16f67624-|49" defer=""></script><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"rayId":"6af5edd95ef840d5","version":"2021.11.0","r":1,"token":"0abe9be495a1426c8d4049c15529447a","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
